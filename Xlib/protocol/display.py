@@ -76,7 +76,6 @@ else:
 
 
 class Display(object):
-    resource_classes = {}
     extension_major_opcodes = {}
     error_classes = error.xerror_class.copy()
     event_classes = event.event_class.copy()
@@ -583,7 +582,7 @@ class Display(object):
                 try:
                     i = self.socket.send(self.data_send)
                 except socket.error as err:
-                    self.close_internal('server: %s' % err[1])
+                    self.close_internal('server: %s' % err)
                     raise self.socket_error
 
                 self.data_send = self.data_send[i:]
@@ -601,7 +600,7 @@ class Display(object):
                         count = max(self.recv_buffer_size, count)
                         bytes_recv = self.socket.recv(count)
                     except socket.error as err:
-                        self.close_internal('server: %s' % err[1])
+                        self.close_internal('server: %s' % err)
                         raise self.socket_error
 
                     if not bytes_recv:

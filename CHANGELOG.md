@@ -1,5 +1,71 @@
 NEWS for Python X Library
 
+Version 0.27
+============
+
+Bug Fixes
+---------
+
+- fix TypeError in socket.error exception handling for Python 3.x (by @t-wissmann)
+
+Extensions
+--------------------
+
+- NV-CONTROL: set offset for all perf levels (by @Sporif)
+
+---
+Version 0.26
+============
+
+Bug Fixes
+---------
+
+- support legacy X servers like RealVNC's one (by @Gerardwx)
+
+Extensions
+--------------------
+
+- enrich XFixes extension with XFixesSelectionNotify events (by @acrisci)
+- add example xfixes-selection-notify.py (by @acrisci)
+- fix two issues in NV-CONTROL extension (by @leinardi)
+- add method get_clock_info into NV-CONTROL extension (by @leinardi)
+- add default client version into Composite extension (by @jakogut)
+- add Damage extension with the example (by @mgarg1 and @jakogut)
+
+---
+Version 0.25
+============
+
+Bug Fixes
+---------
+
+- fix increasing memory usage on display instantiation
+
+NV-CONTROL extension
+--------------------
+
+- add first implementation by Roberto Leinardi (@leinardi)
+
+---
+Version 0.24
+============
+
+Bug Fixes
+---------
+
+- fix protocol handling: correctly support explicit Unix
+  connections and fix support fox macOS
+- improve Python 3 support: fix events sub-code handling
+  and possible crashes when unpacking text data
+- add support for error handlers to the Composite extension
+
+Misc
+----
+
+- fix `xfixes` example
+- fix a bunch of typos in the code / documentation
+
+---
 Version 0.23
 ============
 
